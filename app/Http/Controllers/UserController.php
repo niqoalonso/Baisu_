@@ -63,6 +63,7 @@ class UserController extends Controller
             'email' => $request->email,
             'password' => Hash::make($request->password),
             'id_estado' => $request->estado,
+            'slug' => rand(1000, 9999),
         ]);
         $gestion_usuario->syncRoles($request->roles);
         return response()->json("Usuario actualizado correctamente");
